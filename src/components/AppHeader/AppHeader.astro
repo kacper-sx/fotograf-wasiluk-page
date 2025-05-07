@@ -1,0 +1,50 @@
+---
+import MobileNav from '@/components/AppHeader/MobileNav.astro'
+import { navData } from '@/components/AppHeader/navData'
+import { Image } from 'astro:assets'
+import P1 from '@/assets/logo.png'
+---
+
+<header
+  class:list={[
+    'flex w-full fixed left-0 z-99 top-0 px-spaced xl:py-4 items-center h-20 lg:h-24 xl:h-30 justify-between w-full',
+    '[&>nav]:flex-1 [&>nav>ul]:flex [&>nav>ul]:items-center [&>nav>ul]:gap-12',
+    '[&>nav.dn]:lg:block [&>nav.dn]:hidden backdrop-blur-md',
+  ]}
+>
+  <a href='/' class='' aria-label='Strona główna'>
+    <Image
+      format='webp'
+      src={P1}
+      alt='Logo'
+      class={'flex justify-start w-20 lg:w-26 xl:w-30 scale-150'}
+    />
+  </a>
+  <nav class='justify-center dn'>
+    <ul class='justify-center'>
+      {
+        navData.slice(0, navData.length - 1).map(({ href, title }) => (
+          <li class='flex relative shrink-0 uppercase quintessential-regular items-center text-base xl:text-2xl group transition overflow-clip px-2 py-4'>
+            <a class:list={['']} href={href}>
+              {title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+
+  <ul class='justify-end hidden lg:flex'>
+    {
+      navData.slice(4, 5).map(({ href, title }) => (
+        <li class='flex bg-primary rounded-full items-center quintessential-regular !text-background text-base xl:text-2xl group transition overflow-clip py-4 px-8'>
+          <a class:list={['']} href={href}>
+            {title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <MobileNav />
+</header>

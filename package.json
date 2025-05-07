@@ -1,0 +1,25 @@
+{
+  "name": "fotograf-wasiluk-page",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.3.1",
+    "@iconify-json/lucide": "^1.2.41",
+    "@tailwindcss/vite": "^4.1.5",
+    "astro": "^5.7.11",
+    "astro-icon": "^1.1.5",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lenis": "^1.3.1",
+    "lucide-react": "^0.507.0",
+    "tailwind-merge": "^3.2.0",
+    "tailwindcss": "^4.1.5",
+    "tailwindcss-intersect": "^2.2.0"
+  }
+}

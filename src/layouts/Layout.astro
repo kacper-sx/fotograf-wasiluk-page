@@ -1,0 +1,109 @@
+---
+import '@/styles/global.css'
+import AppHeader from '@/components/AppHeader/AppHeader.astro'
+---
+
+<!doctype html>
+<html lang='pl'>
+  <head>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
+    </style>
+    <link
+      href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap'
+      rel='stylesheet'
+    />
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+
+    <meta name='robots' content='index, follow' />
+    <meta name='generator' content={Astro.generator} />
+    <link rel='canonical' href={'https://adwokatdzyr.pl'} />
+    <title>Adwokat Radosław Dzyr | Kancelaria Adwokacka Biała Podlaska</title>
+    <meta
+      name='description'
+      content={'Nazywam się Radosław Dzyr i jako adwokat świadczę pomoc prawnę dla podmiotów prywatnych i publicznych w Białej Podlaskiej. Zapraszam do kontkatu.'}
+    />
+    <meta name='keywords' content={'Adwokat Biała Podlaska'} />
+    <meta property='og:type' content='website' />
+
+    <meta
+      property='og:title'
+      content={'Adwokat Radosław Dzyr | Kancelaria Adwokacka Biała Podlaska'}
+    />
+    <meta
+      property='og:description'
+      content={'Kancelaria Adwokacka - Adwokat Radosław Rdzyr Biała Podlaska. Usługi prawne dla firm i osób fizycznych.'}
+    />
+    <meta property='og:url' content={'https://adwokatdzyr.pl'} />
+    <meta property='og:image' content={'https://adwokatdzyr.pl/og-image.png'} />
+    <meta property='og:locale' content={'pl'} />
+
+    <meta name='DC.identifier' content='https://adwokatdzyr.pl' />
+    <meta name='DC.creator' content='Kacper Saweczko' />
+    <meta name='DC.language' content='pl' />
+    <meta name='DC.type' content='website' />
+    <meta name='DC.format' content='text/html' />
+    <meta name='DC.rights' content='Kancelaria Adwokacka Radosław Dzyr' />
+    <meta
+      name='DC.subject'
+      content={'Kancelaria Adwokacka - Adwokat Radosław Rdzyr Biała Podlaska. Usługi prawne dla firm i osób fizycznych.'}
+    />
+    <script is:inline type='application/ld+json'>
+      {
+        "@context": "https://schema.org",
+        "@type": "LegalService",
+        "name": "Kancelaria Adwokacka Radosław Dzyr",
+        "image": "https://adwokatdzyr.pl/logo.ico",
+        "@id": "https://adwokatdzyr.pl",
+        "url": "https://adwokatdzyr.pl",
+        "telephone": "+48 503 172 772",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ul. Brzeska 6",
+          "addressLocality": "Biała Podlaska",
+          "postalCode": "21-500",
+          "addressCountry": "PL"
+        },
+
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Radosław dzyr"
+        },
+        "identifier": [
+          {
+            "@type": "PropertyValue",
+            "propertyID": "NIP",
+            "value": "5371701283"
+          }
+        ],
+        "description": "Kancelaria Adwokacka - Adwokat Radosław Rdzyr Biała Podlaska. Usługi prawne dla firm i osób fizycznych.",
+        "email": "adwokat.dzyr@wp.pl"
+      }
+    </script>
+  </head>
+  <body class='overflow-x-hidden flex flex-col'>
+    <AppHeader />
+
+    <slot />
+
+    <!-- <AppFooter /> -->
+  </body>
+
+  <script>
+    import Lenis from 'lenis'
+    declare global {
+      interface Window {
+        lenis: Lenis
+      }
+    }
+    window.lenis = new Lenis({ autoRaf: true })
+  </script>
+</html>
