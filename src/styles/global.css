@@ -4,7 +4,7 @@
 
 @theme {
 
-  --font-sans: 'Open Sans', 'sans-serif';
+  --font-sans: 'Arial', 'sans-serif';
   --color-bbrand-50: oklch(25.62% 0 0);
   --color-bbrand-100: oklch(68.15% 0.213459 39.9549);
   --color-bbrand-200: oklch(21.01% 0.0318 264.66);
@@ -16,8 +16,8 @@
   --color-bbrand-800: oklch(24.94% 0.161 271.97);
   --color-bbrand-900: oklch(21.04% 0.136 271.35);
 
-  --color-primary: oklch(0.72 0.083 57.32);
-  --color-background: oklch(0.98 0.0054 95.1);
+  --color-primary: oklch(0.3 0.0379 279.69);
+  --color-background: oklch(0.89 0 0);
   --color-foreground: oklch(0.31 0.0082 137.81);
   --color-secondary: oklch(0.63 0.1119 82.78);
   --color-border: oklch(33.68% 0 0);
@@ -80,8 +80,8 @@
   animation: spin-slow 10s linear infinite;
 }
 
-.quintessential-regular {
-  font-family: "Quintessential", serif;
+.marcellus-regular {
+  font-family: "Marcellus", serif;
   font-weight: 400;
   font-style: normal;
 }
