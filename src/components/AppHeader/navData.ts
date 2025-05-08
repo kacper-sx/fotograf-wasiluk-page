@@ -1,9 +1,9 @@
 
 
 export const navData = [
-  {href: "/#services", title: "O mnie"},
-  {href: "/#about", title: "Fotografia ślubna"},
-  {href: "/#collaboration", title: "Film ślubny"},
+  {href: "/#about", title: "O mnie"},
+  {href: "/#photos", title: "Fotografia ślubna"},
+  {href: "/#video", title: "Film ślubny"},
   {href: "/#galley", title: "Galeria"},
   {href: "/#contact", title: "Kontakt"},
 ]

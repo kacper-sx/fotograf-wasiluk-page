@@ -1,0 +1,72 @@
+---
+import { Image } from 'astro:assets'
+import P1 from '@/assets/tomasz.jpg'
+import AnimatedNumbers from '../features/Numbers'
+import Heading from '../features/Heading.astro'
+---
+
+<section
+  id='about'
+  class='flex flex-col lg:flex-row px-spaced bg-gradient-to-b from-background py-8 lg:py-16 to-primary/10 items-center w-full lg:justify-between gap-8 lg:gap-0'
+>
+  <div class='flex flex-col gap-4 lg:gap-8 max-w-2xl'>
+    <div class='flex flex-col gap-3 text-sm'>
+      <h2 class='marcellus-regular'>
+        Fotograf i kamerzysta ślubny Biała Podlaska
+      </h2>
+      <Heading title='Poznajmy się bliżej' />
+    </div>
+    <div class='flex flex-col gap-6 text-sm'>
+      <p>
+        Jako fotograf i kamerzysta ślubny staram się być kimś więcej niż tylko
+        osobą za obiektywem. Z pokorą podchodzę do każdej historii, bo wiem, że
+        to właśnie emocje tworzą najpiękniejsze kadry. Dokładam wszelkich
+        starań, by uchwycić każdy uśmiech, spojrzenie i wzruszenie – te ulotne
+        chwile, które później stają się bezcennymi wspomnieniami.
+      </p>
+      <p>
+        Fotografia ślubna to dla mnie nie tylko standardowe ujęcia z ceremonii i
+        wesela. To sposób na pokazanie Waszej miłości, bliskości i
+        indywidualności. Zawsze staram się, by zdjęcia miały swój klimat i
+        opowiadały prawdziwą historię – Waszą historię.
+      </p>
+      <p>
+        W pracy kamerzysty ważne są dla mnie nie tylko technika i obraz, ale
+        przede wszystkim emocje. Tworząc filmy ślubne, zależy mi, by były one
+        czymś więcej niż relacją – chcę, by oglądając je po latach, można było
+        znów poczuć atmosferę tamtego dnia.
+      </p>
+    </div>
+    <a
+      href='https://www.facebook.com/TomaszFotografia/reviews'
+      target='_blank'
+      rel='noopener'
+      class='flex bg-primary rounded-full items-center hover:scale-105 hover:shadow-xl duration-300 transition-all !text-background text-base w-max xl:text-2xl py-4 px-8'
+    >
+      Zobacz opinie klientów
+    </a>
+  </div>
+
+  <div class='flex flex-col gap-4 relative'>
+    <div class='flex lg:absolute bottom-16 -left-60 z-10 w-full lg:w-max'>
+      <AnimatedNumbers client:idle />
+    </div>
+    <Image
+      src={P1}
+      alt='Tomasz Wasiluk'
+      class='double-brand-clip order-first lg:max-w-3xl h-auto rounded-t-4xl object-cover'
+    />
+  </div>
+
+  <style>
+    .double-brand-clip {
+      clip-path: none; /* domyślnie brak efektu */
+    }
+
+    @media (min-width: 1024px) {
+      .double-brand-clip {
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+      }
+    }
+  </style>
+</section>

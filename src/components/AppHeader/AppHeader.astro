@@ -24,7 +24,7 @@ import P1 from '@/assets/logo.png'
     <ul class='justify-center'>
       {
         navData.slice(0, navData.length - 1).map(({ href, title }) => (
-          <li class='flex relative shrink-0 uppercase marcellus-regular items-center text-base xl:text-2xl group transition overflow-clip px-2 py-4'>
+          <li class='flex relative shrink-0 hover:bg-primary/30 transition-colors duration-300 rounded-full uppercase marcellus-regular items-center text-base xl:text-2xl p-4'>
             <a class:list={['']} href={href}>
               {title}
             </a>
