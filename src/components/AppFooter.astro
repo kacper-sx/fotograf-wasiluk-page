@@ -1,0 +1,95 @@
+---
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+import P1 from '@/assets/logo.png'
+
+const contactSections = [
+  {
+    title: 'Dane kontaktowe',
+    lines: ['+48 885 900 090', 'tomaszwasilukpoczta@gmail.com'],
+  },
+  {
+    title: 'Dane adresowe',
+    lines: ['Nowy Sławacinek 15B', '21-500 Nowy Sławacinek'],
+  },
+  {
+    title: 'Media społecznościowe',
+    links: [
+      {
+        name: 'Facebook',
+        href: 'https://www.facebook.com/TomaszFotografia/?locale=pl_PL',
+        icon: 'lucide:facebook',
+      },
+      {
+        name: 'Instagram',
+        href: 'https://www.instagram.com/slubna_fotka/',
+        icon: 'lucide:instagram',
+      },
+      {
+        name: 'Youtube',
+        href: 'https://www.youtube.com/@tomaszwasiluk2001',
+        icon: 'lucide:youtube',
+      },
+    ],
+  },
+]
+---
+
+<footer
+  class='flex flex-col px-spaced pt-4 lg:pt-8 pb-4 gap-8 items-center justify-between bg-gradient-to-b from-primary/10 to-background'
+>
+  <div
+    class='flex flex-col xl:flex-row justify-between items-center w-full border-b border-primary/40 pb-4 lg:pb-8'
+  >
+    <a href='/' aria-label='Strona główna'>
+      <Image
+        format='webp'
+        src={P1}
+        alt='Logo'
+        class='flex h-auto w-1/2 scale-150'
+      />
+    </a>
+
+    <div
+      class='grid grid-cols-1 marcellus-regular lg:grid-cols-3 lg:justify-between w-full lg:gap-0 gap-8 items-center text-xl lg:text-2xl'
+    >
+      {
+        contactSections.map((section) => (
+          <div class='flex flex-col gap-3 lg:place-self-center'>
+            <p class='text-primary/80 font-semibold text-base'>
+              {section.title}
+            </p>
+            {section.lines && section.lines.map((line) => <p>{line}</p>)}
+            {section.links &&
+              section.links.map(({ name, href, icon }) => (
+                <a
+                  href={href}
+                  class='flex items-center gap-3'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  {name} <Icon name={icon} class='size-5 text-primary' />
+                </a>
+              ))}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <div
+    class='flex flex-col lg:flex-row lg:gap-8 gap-4 justify-between text-base font-medium w-full'
+  >
+    <p>&copy; {new Date().getFullYear()} Tomasz Wasiluk</p>
+    <a href='/policy'>Polityka prywatności i cookies</a>
+    <p>
+      Realizacja -{' '}
+      <a
+        class='underline underline-offset-3 font-semibold'
+        href='https://kacper-saw-portfolio.pages.dev/'
+      >
+        kacper-sx
+      </a>
+    </p>
+  </div>
+</footer>

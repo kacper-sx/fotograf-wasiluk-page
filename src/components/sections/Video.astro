@@ -1,0 +1,82 @@
+---
+import Heading from '../features/Heading.astro'
+import Image from 'astro/components/Image.astro'
+---
+
+<section
+  id='video'
+  class='flex flex-col px-spaced bg-gradient-to-b from-background py-8 lg:py-16 to-primary/10 items-center justify-center w-full gap-8 lg:gap-16'
+>
+  <div class='flex flex-col gap-4 items-center text-center max-w-3xl'>
+    <h2 class='text-sm font-semibold'>Filmowanie ślubu w Białej Podlaskiej</h2>
+    <Heading title='Filmujemy wasze wspomnienia' />
+    <p class='text-sm mt-2'>
+      Pamiętajcie, że najważniejsze są wspomnienia, które tworzycie razem z
+      bliskimi. To one pozostaną z Wami na zawsze, przypominając o tej magicznej
+      nocy, gdy wszyscy byliście razem i dzieliliście się szczęściem.
+    </p>
+  </div>
+  <div class='grid grid-cols-1 lg:grid-cols-2 gap-4'>
+    <!-- Video 1 -->
+    <div class='w-full aspect-video'>
+      <iframe
+        class='w-full h-full'
+        src='https://www.youtube.com/embed/ZEnlv6t8ivQ?autoplay=1&mute=1&loop=1&playlist=ZEnlv6t8ivQ&controls=0&modestbranding=1&showinfo=0&rel=0&cc_load_policy=0'
+        title='Pakiet New Look'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        referrerpolicy='strict-origin-when-cross-origin'
+        allowfullscreen></iframe>
+    </div>
+
+    <!-- Video 2 -->
+    <div class='w-full aspect-video'>
+      <iframe
+        class='w-full h-full'
+        src='https://www.youtube.com/embed/pUJrHhrV27M?autoplay=1&mute=1&loop=1&playlist=pUJrHhrV27M&controls=0&modestbranding=1&showinfo=0&rel=0&cc_load_policy=0'
+        title='Pakiet Miętowe Love'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        referrerpolicy='strict-origin-when-cross-origin'
+        allowfullscreen></iframe>
+    </div>
+
+    <div
+      class='flex flex-col gap-4 order-first lg:order-none items-center bg-primary p-4 lg:p-8 !text-background'
+    >
+      <h3 class='text-xl rounded-full lg:text-4xl marcellus-regular'>
+        New Look
+      </h3>
+      <p class='text-center'>
+        Filmik trwa około 60 minut i jest pełen nowoczesnego montażu. Zawiera
+        naturalny dzwięk z przysięgi, błogosławieństwa, a część oparta jest na
+        świetnie dobranych piosenkach. Zobaczysz wiele tańców, tradycyjne
+        oczepiny, oraz wzruszający taniec pożegnalny. Film wypełniony jest
+        dynamicznymi ujęciami w rytmie muzyki, a dodatkowo dostaniesz Teledysk
+        Ślubny.
+      </p>
+      <h4
+        class='text-sm font-bold underline underline-offset-4 decoration-wavy'
+      >
+        Cena filmu ślubnego - 3900zł
+      </h4>
+    </div>
+    <div
+      class='flex flex-col gap-4 items-center bg-primary p-4 lg:p-8 !text-background'
+    >
+      <h3 class='text-xl rounded-full lg:text-4xl marcellus-regular'>
+        Miętowe Love
+      </h3>
+      <p class='text-center'>
+        Film trwa około 90-120 minut, z kluczowymi chwilami z oryginalnym
+        dźwiękiem (ślubne przysięgi, toasty, wzruszające przemówienia,
+        szaleństwo na parkiecie). Do tego dołączamy taneczne rytmy z naturalnym
+        dźwiękiem i ekstra teledysk ślubny.
+      </p>
+
+      <h4
+        class='text-sm font-bold underline underline-offset-4 decoration-wavy'
+      >
+        koszt filmu ślubnego - 3700zł
+      </h4>
+    </div>
+  </div>
+</section>

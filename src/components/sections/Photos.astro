@@ -1,0 +1,142 @@
+---
+import Heading from '../features/Heading.astro'
+import Image from 'astro/components/Image.astro'
+import P1 from '@/assets/pakiet1.jpg'
+import P2 from '@/assets/pakiet2.jpg'
+import { Icon } from 'astro-icon/components'
+
+const fistPackage = [
+  'Min. 500 gotowych Fotografii z Wesela',
+  'Plener Ślubny innego dnia',
+  'prywatna galeria online',
+  'Czas Realizacji 90 dni',
+]
+
+const secondPackage = [
+  'Min. 1200 gotowych Fotografii z Wesela',
+  'Plener ślubny innego dnia',
+  '3x Pendrive',
+  'Galeria ślubna do pobrania online',
+  'Możliwy czas realizacji extra 14 dni.',
+]
+---
+
+<section
+  id='photos'
+  class='flex flex-col px-spaced bg-gradient-to-b from-primary/10 py-8 lg:py-16 to-background items-center justify-center w-full gap-8 lg:gap-16'
+>
+  <div class='flex flex-col gap-4 items-center text-center max-w-3xl'>
+    <h2 class='text-sm font-semibold'>Fotografia ślubna w Białej Podlaskiej</h2>
+    <Heading title='Nasza oferta na zjęcia ślubne' />
+    <p class='text-sm mt-2'>
+      Pamiętajcie, że Wasz ślub to niepowtarzalne wydarzenie. Warto zainwestować
+      w profesjonalistów, którzy zadbają o to, by Wasze wspomnienia zostały
+      uwiecznione w sposób wyjątkowy i niepowtarzalny.
+    </p>
+  </div>
+  <div class='flex flex-col gap-6 lg:gap-12 items-center justify-center w-full'>
+    <div
+      class='flex flex-col lg:flex-row items-center gap-4 lg:gap-0 justify-center w-full'
+    >
+      <div
+        class='flex flex-col gap-4 items-center bg-primary p-4 lg:p-8 w-full lg:w-max !text-background lg:-mr-6 z-10'
+      >
+        <h3 class='text-xl rounded-full lg:text-4xl marcellus-regular'>
+          Rozruszany Parkiet
+        </h3>
+        <p class='font-semibold'>Co zawiera?</p>
+        <ul class='flex flex-col gap-2 text-sm lg:text-lg'>
+          {
+            fistPackage.map((item) => (
+              <li class='flex gap-2 '>
+                <Icon
+                  name='lucide:circle-check-big'
+                  class='size-6 text-background'
+                />{' '}
+                {item}
+              </li>
+            ))
+          }
+        </ul>
+        <h4
+          class='text-sm font-bold underline underline-offset-4 decoration-wavy'
+        >
+          Koszt pakietu zdjęć ślubnych - 3200zł
+        </h4>
+      </div>
+      <Image
+        src={P2}
+        format='avif'
+        alt='Pakiet 1'
+        class='double-brand-clip w-full lg:max-w-2xl 2xl:max-w-4xl h-auto rounded-2xl object-cover'
+      />
+    </div>
+    <div
+      class='flex flex-col lg:flex-row gap-4 lg:gap-0 items-center justify-center w-full'
+    >
+      <Image
+        src={P1}
+        format='avif'
+        alt='Pakiet 1'
+        class='double-brand-clip2 w-full lg:max-w-2xl 2xl:max-w-4xl h-auto rounded-2xl object-cover'
+      />
+      <div
+        class='flex flex-col gap-4 items-center order-first lg:order-none w-full lg:w-max bg-primary p-4 lg:p-8 !text-background lg:-ml-6 z-10'
+      >
+        <h3 class='text-xl rounded-full lg:text-4xl marcellus-regular'>
+          Mistrzowie ceremonii
+        </h3>
+        <p class='font-semibold'>Co zawiera?</p>
+        <ul class='flex flex-col gap-2 text-sm lg:text-lg'>
+          {
+            secondPackage.map((item) => (
+              <li class='flex gap-2'>
+                <Icon
+                  name='lucide:circle-check-big'
+                  class='size-6 text-background'
+                />{' '}
+                {item}
+              </li>
+            ))
+          }
+        </ul>
+        <h4
+          class='text-sm font-bold underline underline-offset-4 decoration-wavy'
+        >
+          Cena pakietu zdjęć ślubnych - 3700zł
+        </h4>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .double-brand-clip2 {
+      clip-path: none; /* domyślnie brak efektu */
+    }
+
+    @media (min-width: 1024px) {
+      .double-brand-clip2 {
+        clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+      }
+    }
+  </style>
+
+  <style>
+    .double-brand-clip {
+      clip-path: none; /* domyślnie brak efektu */
+    }
+
+    @media (min-width: 1024px) {
+      .double-brand-clip {
+        clip-path: polygon(
+          100% 0%,
+          100% 53%,
+          100% 100%,
+          25% 100%,
+          0% 50%,
+          25% 0%
+        );
+      }
+    }
+  </style>
+</section>

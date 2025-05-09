@@ -7,11 +7,11 @@ import Heading from '../features/Heading.astro'
 
 <section
   id='about'
-  class='flex flex-col lg:flex-row px-spaced bg-gradient-to-b from-background py-8 lg:py-16 to-primary/10 items-center w-full lg:justify-between gap-8 lg:gap-0'
+  class='flex flex-col xl:flex-row px-spaced bg-gradient-to-b from-background py-8 lg:py-16 to-primary/10 items-center w-full lg:justify-between gap-8 lg:gap-0'
 >
   <div class='flex flex-col gap-4 lg:gap-8 max-w-2xl'>
     <div class='flex flex-col gap-3 text-sm'>
-      <h2 class='marcellus-regular'>
+      <h2 class='marcellus-regular font-semibold'>
         Fotograf i kamerzysta ślubny Biała Podlaska
       </h2>
       <Heading title='Poznajmy się bliżej' />
@@ -48,13 +48,16 @@ import Heading from '../features/Heading.astro'
   </div>
 
   <div class='flex flex-col gap-4 relative'>
-    <div class='flex lg:absolute bottom-16 -left-60 z-10 w-full lg:w-max'>
+    <div
+      class='flex xl:absolute -bottom-16 2xl:bottom-8 -left-60 z-10 w-full lg:w-max'
+    >
       <AnimatedNumbers client:idle />
     </div>
     <Image
       src={P1}
+      format='avif'
       alt='Tomasz Wasiluk'
-      class='double-brand-clip order-first lg:max-w-3xl h-auto rounded-t-4xl object-cover'
+      class='double-brand-clip order-first lg:max-w-xl 2xl:max-w-3xl h-auto rounded-t-4xl object-cover'
     />
   </div>
 
