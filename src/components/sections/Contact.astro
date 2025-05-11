@@ -1,0 +1,178 @@
+---
+import { getImage } from 'astro:assets'
+import myBackground from '@/assets/kontakt.jpg'
+import Heading from '../features/Heading.astro'
+import { Icon } from 'astro-icon/components'
+
+const optimizedBackground = await getImage({
+  src: myBackground,
+  format: 'avif',
+})
+
+const contactSections = [
+  {
+    icon: 'lucide:phone',
+    data: '+48 885 900 090',
+  },
+  {
+    icon: 'lucide:mail',
+    data: 'tomaszwasilukpoczta@gmail.com',
+  },
+  {
+    icon: 'lucide:map-pin',
+    data: 'Nowy Sławacinek 15B',
+  },
+]
+
+const mediaSections = [
+  {
+    name: 'Facebook',
+    href: 'https://www.facebook.com/TomaszFotografia/?locale=pl_PL',
+    icon: 'lucide:facebook',
+  },
+  {
+    name: 'Instagram',
+    href: 'https://www.instagram.com/slubna_fotka/',
+    icon: 'lucide:instagram',
+  },
+  {
+    name: 'Youtube',
+    href: 'https://www.youtube.com/@tomaszwasiluk2001',
+    icon: 'lucide:youtube',
+  },
+]
+---
+
+<section
+  id='contact'
+  class='flex w-full bg-bottom min-h-[130vh] bg-cover justify-end items-center py-16'
+  style={`background-image: url(${optimizedBackground.src});`}
+>
+  <div
+    class='flex flex-col justify-between h-full gap-16 w-full px-spaced items-end'
+  >
+    <div
+      class='flex flex-col gap-8 max-w-6xl bg-white p-6 rounded-2xl bg-gradient-to-l from-primary/30 to-background'
+    >
+      <h2 class='text-sm font-semibold text-primary'>
+        Kontakt do fotografa ślublego Biała Podlaska
+      </h2>
+      <div class='flex flex-col 2xl:flex-row gap-8'>
+        <div class='flex flex-col gap-4'>
+          <p class='text-2xl lg:text-4xl tracking-wide marcellus-regular'>
+            Dane kontaktowe
+          </p>
+          {
+            contactSections.map((section) => (
+              <div class='flex items-center gap-2'>
+                <Icon
+                  class={` text-primary size-4 lg:size-8`}
+                  name={section.icon}
+                />
+                <p class='text-base lg:text-lg marcellus-regular'>
+                  {section.data}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class='flex flex-col gap-6'>
+          <p class='text-2xl lg:text-4xl tracking-wide marcellus-regular'>
+            Media społecznościowe
+          </p>
+          <div class='flex flex-col md:flex-row gap-4'>
+            {
+              mediaSections.map((section) => (
+                <a
+                  href={section.href}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  class='flex items-center gap-2'
+                >
+                  <Icon
+                    class={` text-primary size-4 lg:size-8`}
+                    name={section.icon}
+                  />
+                  <p class='text-lg lg:text-xl marcellus-regular'>
+                    {section.name}
+                  </p>
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <form
+        id='contact-form'
+        method='POST'
+        class='flex flex-col gap-4 bg-background p-6 rounded-2xl bg-gradient-to-l from-primary/30 to-background'
+      >
+        <div class='flex flex-col'>
+          <label>Imię i nazwisko</label>
+          <input
+            type='text'
+            name='from_name'
+            placeholder='np: Jan Kowalski'
+            required
+            class='px-4 py-2 bg-background placeholder:text-primary/80 border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)]'
+          />
+        </div>
+        <div class='flex flex-col'>
+          <label>Adres email</label>
+          <input
+            type='email'
+            name='reply_to'
+            placeholder='np: jakkowalski@o2.pl'
+            required
+            class='px-4 py-2 bg-background placeholder:text-primary/80 border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)]'
+          />
+        </div>
+        <div class='flex flex-col'>
+          <label>Data ślubu</label>
+          <input
+            type='date'
+            name='from_date'
+            placeholder='date'
+            required
+            class='px-4 py-2 bg-background placeholder:text-primary/80 border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)]'
+          />
+        </div>
+        <div class='flex flex-col'>
+          <label>Dodatkowa wiadomość</label>
+          <textarea
+            name='message'
+            placeholder='Tekst wiadomości'
+            rows='6'
+            required
+            class='px-4 py-2 bg-background placeholder:text-primary/80 border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)] resize-none'
+          ></textarea>
+        </div>
+        <button
+          type='submit'
+          class='px-4 py-2 bg-primary text-background rounded-lg transition-opacity border border-[var(--white-icon-tr)] hover:bg-primary/90'
+        >
+          Wyślij
+        </button>
+        <p class='text-sm text-[var(--white-icon)]'>
+          Wysyłając formularz potwierdzasz, że znasz i akceptujesz <a
+            href='/polityka-prywatnosci'>politykę prywatności.</a
+          >
+        </p>
+      </form>
+      <div
+        id='form-message'
+        class='hidden justify-center items-center mt-4 placeholder:text-primary/80 text-lg'
+      >
+        ✅ Dziękujemy za wysłanie formularza!
+      </div>
+    </div>
+    <div
+      class='flex max-w-4xl bg-white p-6 rounded-2xl bg-gradient-to-l from-primary/30 to-background'
+    >
+      <Heading title='Zapraszam do współpracy' />
+    </div>
+  </div>
+</section>
