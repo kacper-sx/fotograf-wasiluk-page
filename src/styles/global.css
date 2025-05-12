@@ -99,4 +99,7 @@
     
     flex-direction: column;
   }
+  section {
+    scroll-margin: 120px;
+  }
 }

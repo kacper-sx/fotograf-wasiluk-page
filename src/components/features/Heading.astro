@@ -10,8 +10,11 @@ const { title } = Astro.props
 
 <p
   style='text-shadow: var(--color-primary) 0px 5px 30px;'
-  class='flex gap-4 items-center text-3xl lg:text-5xl tracking-wide marcellus-regular'
+  class='flex gap-4 items-center text-3xl lg:text-5xl tracking-wide marcellus-regular text-center'
 >
   {title}
-  <Icon name='lucide:camera' class='size-5 lg:size-10 text-primary/80' />
+  <Icon
+    name='lucide:camera'
+    class='size-5 lg:size-10 text-primary/80 hidden md:block'
+  />
 </p>

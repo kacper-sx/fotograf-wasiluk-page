@@ -1,0 +1,50 @@
+---
+import { ImageGallery } from '@/components/features/image-gallery'
+import Heading from '../features/Heading.astro'
+import type { GetImageResult } from 'astro'
+import { getImage } from 'astro:assets'
+
+const recordImages = import.meta.glob(
+  '/src/assets/galeria/*.{jpg,png,webp,avif}',
+  { eager: true, import: 'default' },
+)
+
+// Konwersja wartości na tablicę ścieżek do obrazów
+const images: string[] = Object.values(recordImages) as string[]
+
+const imagePromises = images.map(async (src) => {
+  if (!src) {
+    console.error('🚨 Błąd: src jest undefined!')
+    return null
+  }
+
+  try {
+    return await getImage({
+      src,
+      quality: 90,
+      widths: [400, 600, 800, 1200, 1600, 2000],
+      format: 'webp',
+    })
+  } catch (error) {
+    console.error('🚨 Błąd w getImage():', error)
+    return null
+  }
+})
+
+// Usunięcie `null` wartości
+const imageProps: GetImageResult[] = (await Promise.all(imagePromises)).filter(
+  (img): img is GetImageResult => img !== null,
+)
+---
+
+<section
+  class='flex flex-col px-spaced bg-gradient-to-b from-background pt-24 lg:pt-36 lg:pb-16 to-primary/10 items-center justify-center w-full gap-8 lg:gap-16'
+>
+  <div class='flex flex-col gap-4 items-center'>
+    <h1>Portfolio zdjęć ślubnych</h1>
+    <Heading title='Spójrz na uwiecznione wspomnienia' />
+  </div>
+  <div class='grid grid-cols-2 gap-4 lg:gap-8 lg:grid-cols-3 w-full'>
+    <ImageGallery client:idle imageProps={imageProps} />
+  </div>
+</section>
