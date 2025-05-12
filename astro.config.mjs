@@ -9,11 +9,13 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://wasilukfoto.pl',
   vite: {
     plugins: [tailwindcss()]
   },
 
   integrations: [icon({
+      
       include: {
         lucide: [
           "arrow-up-right",

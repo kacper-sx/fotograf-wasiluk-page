@@ -8,7 +8,7 @@ Disallow: /.git/*
 Disallow: /.venv/*
 Allow: /
 # Host
-Host: https://fotowasiluk.pl
+Host: https://wasilukfoto.pl
 
 # Sitemaps
-Sitemap: https://fotowasiluk.pl/sitemap-0.xml
+Sitemap: https://wasilukfoto.pl/sitemap-0.xml
