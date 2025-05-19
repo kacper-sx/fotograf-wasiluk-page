@@ -84,8 +84,8 @@ export const ImageGallery = (props: ImageGalleryProps) => {
         />
         <DialogContent
           className={cn(
-            "fixed w-full h-full z-[9999] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
-            "grid place-items-center",
+            "fixed w-full h-full z-[9999] top-1/2 left-1/2 mt-12 -translate-x-1/2 -translate-y-1/2",
+            "",
           )}
           onCloseAutoFocus={(e) => e.preventDefault()}
         >
@@ -104,12 +104,12 @@ export const ImageGallery = (props: ImageGalleryProps) => {
                     key={image.src}
                   >
                     <img
-                      className="h-full w-full object-contain fade-in-0 animate-in duration-500"
+                      className="flex h-full w-full object-contain fade-in-0 animate-in duration-500"
                       src={image.src}
                       loading="lazy"
                       fetchPriority="auto"
                       srcSet={image.srcSet.attribute}
-                      sizes="100vw"
+                      sizes="90vw"
                       {...image.attributes}
                       alt={""}
                     />
@@ -117,14 +117,15 @@ export const ImageGallery = (props: ImageGalleryProps) => {
                 )
               })}
             </CarouselContent>
-            <CarouselPrevious className="z-10000 left-8" />
-            <CarouselNext className="z-10000 right-8" />
+            <CarouselPrevious className="z-10000 left-8 hover:bg-background/20" />
+            <CarouselNext className="z-10000 right-8 hover:bg-background/20" />
             <p className="absolute bg-background rounded-3xl font-semibold px-6 py-3 bottom-4 left-1/2 -translate-x-1/2">
               Zdjęcie {current + 1} / {count}
             </p>
             <Button
-              className="absolute right-6 top-6"
+              className="absolute right-6 top-6 hover:bg-background/20"
               size="icon"
+              variant="outline"
               onClick={() => setOpen(false)}
             >
               <X />

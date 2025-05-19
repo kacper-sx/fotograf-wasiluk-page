@@ -5,7 +5,7 @@ import type { GetImageResult } from 'astro'
 import { getImage } from 'astro:assets'
 
 const recordImages = import.meta.glob(
-  '/src/assets/galeria/*.{jpg,png,webp,avif}',
+  '/src/assets/galeria/*.{jpg,png,webp,avif,JPG}',
   { eager: true, import: 'default' },
 )
 
