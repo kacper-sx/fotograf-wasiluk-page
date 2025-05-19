@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+import P2 from '@/assets/para2.jpg'
+---
+
+<Layout>
+  <section
+    class='flex flex-col lg:flex-row bg-gradient-to-b from-primary/10 pt-24 lg:pt-16 to-background items-center justify-center min-h-screen overflow-x-hidden'
+  >
+    <div
+      class='flex text-center flex-col gap-5 w-full lg:gap-8 text-sm max-w-xl w-full px-4 md:px-8 lg:px-0 lg:ml-12'
+    >
+      <p
+        class='marcellus-regular text-2xl w-full flex flex-col lg:text-5xl/16 tracking-wide'
+      >
+        <span>Coś poszło nie tak!</span>
+      </p>
+      <p class='font-medium text-lg'>
+        Strona, której szukasz nie istnieje lub została przeniesiona. Wróć na
+        stronę główną.
+      </p>
+      <div
+        class='flex flex-row gap-4 text-lg xl:text-2xl marcellus-regular w-full justify-center items-center'
+      >
+        <a
+          href='/'
+          class='flex bg-primary rounded-full items-center hover:scale-105 hover:shadow-xl duration-300 transition-all !text-background text-base w-max xl:text-2xl py-4 px-8'
+        >
+          Strona główna
+        </a>
+      </div>
+    </div>
+    <div
+      class='flex-col hidden lg:flex justify-between min-h-[calc(100vh-15rem)] w-full'
+    >
+      <a
+        target='_blank'
+        rel='noopener'
+        href='https://www.facebook.com/TomaszFotografia'
+        aria-label='Facebook'
+      >
+        <Icon
+          name='sociale'
+          class={'flex size-48 place-self-center transition-all hover:scale-110 duration-500 animate-spin-slow'}
+        />
+      </a>
+      <Image
+        src={P2}
+        format='avif'
+        alt='Młoda para poczas sesji ślubnej'
+        class='max-w-md place-self-end rounded-l-full h-auto object-cover'
+      />
+    </div>
+  </section></Layout
+>
